@@ -5,10 +5,12 @@ using UnityEngine;
 public class SphereScript : MonoBehaviour
 {
     //public float posY;
+    public Vector3 StartPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        StartPosition = transform.position;
         //posY = this.transform.position.y;
     }
 
@@ -17,7 +19,7 @@ public class SphereScript : MonoBehaviour
     {
         if(this.gameObject.transform.position.y < -10)
         {
-            transform.position = new Vector3(0, 4, 0);
+            transform.position = StartPosition;
         }
     }
 }
