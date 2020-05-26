@@ -6,11 +6,13 @@ public class SphereScript : MonoBehaviour
 {
     //public float posY;
     public Vector3 StartPosition;
+    Rigidbody rigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
         StartPosition = transform.position;
+        rigidbody = this.GetComponent<Rigidbody>();
         //posY = this.transform.position.y;
     }
 
@@ -19,7 +21,13 @@ public class SphereScript : MonoBehaviour
     {
         if(this.gameObject.transform.position.y < -10)
         {
-            transform.position = StartPosition;
+            DropOut();
         }
+    }
+
+    void DropOut()
+    {
+        transform.position = StartPosition;
+        this.rigidbody.velocity = new Vector3(0, 0, 0);
     }
 }

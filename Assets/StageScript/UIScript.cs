@@ -19,4 +19,6 @@ public class UIScript : MonoBehaviour
         timer -= Time.deltaTime;
         timerText.text = timer.ToString("f0");
     }
+
+    
 }
