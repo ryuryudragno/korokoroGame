@@ -7,12 +7,16 @@ public class SphereScript : MonoBehaviour
     //public float posY;
     public Vector3 StartPosition;
     Rigidbody rigidbody;
+    public AudioClip dropOutSound;
+    AudioSource audioSource;
+
 
     // Start is called before the first frame update
     void Start()
     {
         StartPosition = transform.position;
         rigidbody = this.GetComponent<Rigidbody>();
+        
         //posY = this.transform.position.y;
     }
 
@@ -29,5 +33,7 @@ public class SphereScript : MonoBehaviour
     {
         transform.position = StartPosition;
         this.rigidbody.velocity = new Vector3(0, 0, 0);
+        GameObject.FindObjectOfType<FieldScript>().ballOut();
+        GameObject.FindObjectOfType<UIScript>().timeMinus();
     }
 }

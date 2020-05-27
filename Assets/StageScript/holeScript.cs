@@ -9,6 +9,7 @@ public class holeScript : MonoBehaviour
     public int InBallNumber = 0;
     public int AllBallNumber;
     public AudioClip holeSoundEffect;
+    public AudioClip clearSound;
     AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -29,13 +30,21 @@ public class holeScript : MonoBehaviour
         {
             InBallNumber += 1;
             Destroy(other.gameObject);
-            if(InBallNumber == AllBallNumber)
+            audioSource.PlayOneShot(holeSoundEffect);
+            if (InBallNumber == AllBallNumber)
             {
                 Debug.Log("clear");
                 clearText.text = "Clear!!";
+                audioSource.PlayOneShot(clearSound);
+                GameObject.FindObjectOfType<UIScript>().gameFin();
+                
             }
-            audioSource.PlayOneShot(holeSoundEffect);
-            Debug.Log("clear");
+            else
+            {
+                //audioSource.PlayOneShot(holeSoundEffect);
+                GameObject.FindObjectOfType<UIScript>().timePlus();
+            }
+            //Debug.Log("clear");
         }
     }
 }

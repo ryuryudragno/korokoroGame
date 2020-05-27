@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class TitleScript : MonoBehaviour
 {
+    public AudioClip StartSoundEffect;
+    AudioSource audioSource;
+    //public AudioClip audioClip1;
 
     // Use this for initialization
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -24,6 +28,7 @@ public class TitleScript : MonoBehaviour
     //スマホ向け そのオブジェクトがタッチされていたらtrue（マルチタップ対応）
     bool OnTouchDown()
     {
+        
         // タッチされているとき
         if (0 < Input.touchCount)
         {
@@ -35,7 +40,12 @@ public class TitleScript : MonoBehaviour
                 // タッチしたときかどうか
                 if (t.phase == TouchPhase.Began)
                 {
-                    SceneManager.LoadScene("Stage1");
+                    //SceneManager.LoadScene("Stage1");
+                    audioSource.PlayOneShot(StartSoundEffect);
+                    StartCoroutine("GoToGameScene");
+                    Debug.Log("あああ");
+                    //audioSource.Play();
+
                     //タッチした位置からRayを飛ばす
                     Ray ray = Camera.main.ScreenPointToRay(t.position);
                     RaycastHit hit = new RaycastHit();
@@ -51,5 +61,11 @@ public class TitleScript : MonoBehaviour
             }
         }
         return false; //タッチされてなかったらfalse
+    }
+
+    IEnumerator GoToGameScene()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("Stage1");
     }
 }
