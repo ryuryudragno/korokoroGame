@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIScript : MonoBehaviour
 {
     public Text timerText;
+    public Text clearText;
     float timer = 30;
     public bool timeStop = false;
     // Start is called before the first frame update
@@ -22,9 +23,7 @@ public class UIScript : MonoBehaviour
 
         if(timer <= 0)
         {
-            timerText.text = "GameOver";
-            GameObject.FindObjectOfType<FieldScript>().enabled = false;
-            GameObject.FindObjectOfType<SphereScript>().enabled = false;
+            gameOver();
         }
         if (timeStop == true)
         {
@@ -45,7 +44,19 @@ public class UIScript : MonoBehaviour
     public void gameFin()//クリアしてもゲームオーバーしても呼ばれる
     {
         timeStop = true;
-        Debug.Log("読んだ？");
     }
-
+    void gameOver()
+    {
+        clearText.text = "GameOver";
+        timerText.text = "";
+        FindObjectOfType<FieldScript>().enabled = false;
+        //FindObjectOfType<SphereScript>().enabled = false;
+        FindObjectOfType<holeScript>().enabled = false;
+        FindObjectOfType<FrontUIScript>().AppearButton();
+        GameObject[] Spheres = GameObject.FindGameObjectsWithTag("Player");
+        for (int i = 0; i < Spheres.Length; i++)
+        {
+            Destroy(Spheres[i]);
+        }
+    }
 }

@@ -7,9 +7,11 @@ public class SphereScript : MonoBehaviour
     //public float posY;
     public Vector3 StartPosition;
     Rigidbody rigidbody;
+    /*
     public AudioClip dropOutSound;
     AudioSource audioSource;
-
+    */
+    bool stopBall = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,5 +37,9 @@ public class SphereScript : MonoBehaviour
         this.rigidbody.velocity = new Vector3(0, 0, 0);
         GameObject.FindObjectOfType<FieldScript>().ballOut();
         GameObject.FindObjectOfType<UIScript>().timeMinus();
+    }
+    public void Destroy()
+    {
+        Destroy(this.gameObject);
     }
 }

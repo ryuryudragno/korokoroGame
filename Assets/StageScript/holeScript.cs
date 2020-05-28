@@ -33,11 +33,7 @@ public class holeScript : MonoBehaviour
             audioSource.PlayOneShot(holeSoundEffect);
             if (InBallNumber == AllBallNumber)
             {
-                Debug.Log("clear");
-                clearText.text = "Clear!!";
-                audioSource.PlayOneShot(clearSound);
-                GameObject.FindObjectOfType<UIScript>().gameFin();
-                
+                gameClear();
             }
             else
             {
@@ -47,4 +43,19 @@ public class holeScript : MonoBehaviour
             //Debug.Log("clear");
         }
     }
+
+    void gameClear()
+    {
+        Debug.Log("clear");
+        clearText.text = "Clear!!";
+        audioSource.PlayOneShot(clearSound);
+        GameObject.FindObjectOfType<FieldScript>().enabled = false;
+        GameObject.FindObjectOfType<UIScript>().gameFin();
+        GameObject.FindObjectOfType<FrontUIScript>().AppearButton();
+    }
+
+    /*public void gameOverText()
+    {
+        clearText.text = "GameOver";
+    }*/
 }
