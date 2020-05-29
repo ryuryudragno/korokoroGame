@@ -1,0 +1,68 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class StageSelectScript : MonoBehaviour
+{
+    public Button stage1button;
+    public Button stage2button;
+    public Button stage3button;
+    public Button stage4button;
+    public Button stage5button;
+    public Button stage6button;
+    public AudioClip selectSound;
+    AudioSource audioSource;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void MoveToStage1()
+    {
+        StartCoroutine("Stage1");
+        audioSource.PlayOneShot(selectSound);
+    }
+    IEnumerator Stage1()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("Stage1");
+    }
+
+    public void MoveToStage2()
+    {
+        StartCoroutine("Stage2");
+        audioSource.PlayOneShot(selectSound);
+    }
+    IEnumerator Stage2()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("Stage2");
+    }
+
+    public void MoveToStage3()
+    {
+        SceneManager.LoadScene("Title");
+    }
+    public void MoveToStage4()
+    {
+        SceneManager.LoadScene("Title");
+    }
+    public void MoveToStage5()
+    {
+        SceneManager.LoadScene("Title");
+    }
+    public void MoveToStage6()
+    {
+        SceneManager.LoadScene("Title");
+    }
+}

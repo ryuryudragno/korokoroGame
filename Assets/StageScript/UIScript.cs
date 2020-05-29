@@ -52,7 +52,7 @@ public class UIScript : MonoBehaviour
         FindObjectOfType<FieldScript>().enabled = false;
         //FindObjectOfType<SphereScript>().enabled = false;
         FindObjectOfType<holeScript>().enabled = false;
-        FindObjectOfType<FrontUIScript>().AppearButton();
+        FindObjectOfType<FrontUIScript>().GameOverAppearButton();
         GameObject[] Spheres = GameObject.FindGameObjectsWithTag("Player");
         for (int i = 0; i < Spheres.Length; i++)
         {

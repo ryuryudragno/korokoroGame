@@ -42,7 +42,7 @@ public class TitleScript : MonoBehaviour
                 {
                     //SceneManager.LoadScene("Stage1");
                     audioSource.PlayOneShot(StartSoundEffect);
-                    StartCoroutine("GoToGameScene");
+                    StartCoroutine("GoToStageSelect");
                     Debug.Log("あああ");
                     //audioSource.Play();
 
@@ -63,9 +63,9 @@ public class TitleScript : MonoBehaviour
         return false; //タッチされてなかったらfalse
     }
 
-    IEnumerator GoToGameScene()
+    IEnumerator GoToStageSelect()
     {
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("Stage1");
+        SceneManager.LoadScene("StageSelect");
     }
 }

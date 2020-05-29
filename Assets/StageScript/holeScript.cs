@@ -51,7 +51,7 @@ public class holeScript : MonoBehaviour
         audioSource.PlayOneShot(clearSound);
         GameObject.FindObjectOfType<FieldScript>().enabled = false;
         GameObject.FindObjectOfType<UIScript>().gameFin();
-        GameObject.FindObjectOfType<FrontUIScript>().AppearButton();
+        GameObject.FindObjectOfType<FrontUIScript>().ClearAppearButton();
     }
 
     /*public void gameOverText()
