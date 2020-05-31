@@ -12,6 +12,7 @@ public class FrontUIScript : MonoBehaviour
     public GameObject retryBtn;
     public AudioClip selectSound;
     AudioSource audioSource;
+    public string nextlebel;
 
     /*
     public Button nextBtn;
@@ -49,12 +50,14 @@ public class FrontUIScript : MonoBehaviour
         selectBtn.interactable = true;
         */
     }
+    //ボタン表示
     public void  GameOverAppearButton()
     {
         retryBtn.SetActive(true);
         selectBtn.SetActive(true);
         titleBtn.SetActive(true);
     }
+    //タイトル画面へ
     public void BackToTitle()
     {
         SceneManager.LoadScene("Title");
@@ -80,5 +83,16 @@ public class FrontUIScript : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene("Stage1");
+    }
+    /*次のステージへ*/
+    public void MoveToNextStage()
+    {
+        StartCoroutine("NextStage");
+        audioSource.PlayOneShot(selectSound);
+    }
+    IEnumerator NextStage()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(nextlebel);
     }
 }

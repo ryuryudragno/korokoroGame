@@ -889,7 +889,6 @@ GameObject:
   - component: {fileID: 608652445}
   - component: {fileID: 608652444}
   - component: {fileID: 608652443}
-  - component: {fileID: 608652447}
   m_Layer: 5
   m_Name: FrontCanvas
   m_TagString: Untagged
@@ -981,18 +980,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &608652447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 608652442}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93ef6c0b14bb64640b88fb67bc7f0aa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &802184167
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,7 +1140,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 831812427}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1492442126}
+        m_MethodName: MoveToNextStage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &831812427
@@ -2254,6 +2252,7 @@ MonoBehaviour:
   titleBtn: {fileID: 593101838}
   retryBtn: {fileID: 1477778397}
   selectSound: {fileID: 8300000, guid: 120a8354b0f4b472d9d527f8ac255b5b, type: 3}
+  nextlebel: Stagetest
 --- !u!4 &1492442127
 Transform:
   m_ObjectHideFlags: 0
