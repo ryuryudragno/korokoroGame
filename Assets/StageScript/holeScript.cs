@@ -10,6 +10,7 @@ public class holeScript : MonoBehaviour
     public int AllBallNumber;
     public AudioClip holeSoundEffect;
     public AudioClip clearSound;
+    public AudioClip gameOverSound;
     AudioSource audioSource;
 
     // Start is called before the first frame update
@@ -52,10 +53,11 @@ public class holeScript : MonoBehaviour
         GameObject.FindObjectOfType<FieldScript>().enabled = false;
         GameObject.FindObjectOfType<UIScript>().gameFin();
         GameObject.FindObjectOfType<FrontUIScript>().ClearAppearButton();
+        GameObject.FindObjectOfType<BGMScript>().StopBGM();
     }
 
-    /*public void gameOverText()
+    public void GameOverSound()
     {
-        clearText.text = "GameOver";
-    }*/
+        audioSource.PlayOneShot(gameOverSound);
+    }
 }

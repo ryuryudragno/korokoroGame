@@ -9,10 +9,13 @@ public class UIScript : MonoBehaviour
     public Text clearText;
     float timer = 30;
     public bool timeStop = false;
+    //GameObject gameObject;
+
     // Start is called before the first frame update
     void Start()
     {
         timerText.text = "30";
+        //gameObject = GameObject.Find("MainCamera");
     }
 
     // Update is called once per frame
@@ -53,10 +56,13 @@ public class UIScript : MonoBehaviour
         //FindObjectOfType<SphereScript>().enabled = false;
         FindObjectOfType<holeScript>().enabled = false;
         FindObjectOfType<FrontUIScript>().GameOverAppearButton();
+        FindObjectOfType<holeScript>().GameOverSound();
+
         GameObject[] Spheres = GameObject.FindGameObjectsWithTag("Player");
         for (int i = 0; i < Spheres.Length; i++)
         {
             Destroy(Spheres[i]);
         }
+        GameObject.FindObjectOfType<BGMScript>().StopBGM();
     }
 }
