@@ -11,6 +11,7 @@ public class FrontUIScript : MonoBehaviour
     public GameObject titleBtn;
     public GameObject retryBtn;
     public AudioClip selectSound;
+    public AudioClip gameOverSound;
     AudioSource audioSource;
     public string nextlebel;
 
@@ -94,5 +95,9 @@ public class FrontUIScript : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(nextlebel);
+    }
+    public void GameOverSound()
+    {
+        audioSource.PlayOneShot(gameOverSound);
     }
 }

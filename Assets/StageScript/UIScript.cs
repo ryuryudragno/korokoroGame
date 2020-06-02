@@ -15,6 +15,7 @@ public class UIScript : MonoBehaviour
     void Start()
     {
         timerText.text = "30";
+        
         //gameObject = GameObject.Find("MainCamera");
     }
 
@@ -27,6 +28,7 @@ public class UIScript : MonoBehaviour
         if(timer <= 0)
         {
             gameOver();
+            timeStop = true;
         }
         if (timeStop == true)
         {
@@ -56,7 +58,8 @@ public class UIScript : MonoBehaviour
         //FindObjectOfType<SphereScript>().enabled = false;
         FindObjectOfType<holeScript>().enabled = false;
         FindObjectOfType<FrontUIScript>().GameOverAppearButton();
-        FindObjectOfType<holeScript>().GameOverSound();
+        FindObjectOfType<FrontUIScript>().GameOverSound();
+        
 
         GameObject[] Spheres = GameObject.FindGameObjectsWithTag("Player");
         for (int i = 0; i < Spheres.Length; i++)

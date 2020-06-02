@@ -9,6 +9,7 @@ public class FieldScript : MonoBehaviour
     /// <summary>フォント</summary>
     private GUIStyle labelStyle;
     Rigidbody rigidbody;
+    Vector3 localAngle;
 
     public AudioClip dropOutSound;
     AudioSource audioSource;
@@ -22,6 +23,7 @@ public class FieldScript : MonoBehaviour
         this.labelStyle.fontSize = Screen.height / 22;
         this.labelStyle.normal.textColor = Color.white;
         audioSource = GetComponent<AudioSource>();
+        localAngle = this.transform.eulerAngles;
     }
 
     // Update is called once per frame
@@ -29,7 +31,15 @@ public class FieldScript : MonoBehaviour
     {
         //文字描画はOnGUIでしかできないらしいので保持
         this.acceleration = Input.acceleration;
+        //localAngle.x += _inputY;
         transform.Rotate(new Vector3((float)(this.acceleration.y + 0.015), 0, (float)(-this.acceleration.x - 0.005)));//回転する
+        Debug.Log(localAngle);
+        /*
+        if(transform.rotation.x >= 20 || transform.rotation.x <= -20)
+        {
+            this.acceleration.y = (float)-0.015;
+        }*/
+
         //rigidbody.angularVelocity = new Vector3(this.acceleration.y, 0, -this.acceleration.x);
         
     }

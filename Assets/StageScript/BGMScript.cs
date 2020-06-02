@@ -17,7 +17,7 @@ public class BGMScript : MonoBehaviour
     }
     public void StopBGM()
     {
-        audioSource.Pause();
+        audioSource.Stop();
     }
     /*public void GameOverSound()
     {
