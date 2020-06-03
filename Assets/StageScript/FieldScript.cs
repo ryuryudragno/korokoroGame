@@ -9,11 +9,18 @@ public class FieldScript : MonoBehaviour
     /// <summary>フォント</summary>
     private GUIStyle labelStyle;
     Rigidbody rigidbody;
-    Vector3 localAngle;
 
     public AudioClip dropOutSound;
     AudioSource audioSource;
     float t = 0;
+    int maxAngle = 20;
+    int minAngle = -20;
+    float xRotate = 0;
+    float yRotate = 0;
+    float zRotate = 0;
+
+    Vector3 dropForce = new Vector3(0.0f,0.0f,1.0f);
+
 
     // Use this for initialization
     void Start()
@@ -23,7 +30,7 @@ public class FieldScript : MonoBehaviour
         this.labelStyle.fontSize = Screen.height / 22;
         this.labelStyle.normal.textColor = Color.white;
         audioSource = GetComponent<AudioSource>();
-        localAngle = this.transform.eulerAngles;
+        rigidbody = this.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -31,9 +38,13 @@ public class FieldScript : MonoBehaviour
     {
         //文字描画はOnGUIでしかできないらしいので保持
         this.acceleration = Input.acceleration;
-        //localAngle.x += _inputY;
-        transform.Rotate(new Vector3((float)(this.acceleration.y + 0.015), 0, (float)(-this.acceleration.x - 0.005)));//回転する
-        Debug.Log(localAngle);
+        //transform.Rotate(new Vector3((float)(this.acceleration.y + 0.015), 0, (float)(-this.acceleration.x - 0.005)));//回転する
+        //Debug.Log(new Vector2(xRotate,zRotate));
+        transform.eulerAngles = new Vector3(xRotate, yRotate, zRotate);
+        xRotate = Mathf.Clamp(xRotate + (float)(this.acceleration.y + 0.015), minAngle, maxAngle);
+        zRotate = Mathf.Clamp(zRotate + (float)(-this.acceleration.x - 0.005), minAngle, maxAngle);
+
+
         /*
         if(transform.rotation.x >= 20 || transform.rotation.x <= -20)
         {
@@ -41,15 +52,19 @@ public class FieldScript : MonoBehaviour
         }*/
 
         //rigidbody.angularVelocity = new Vector3(this.acceleration.y, 0, -this.acceleration.x);
-        
+
     }
 
     //ボールが落ちた時に呼ばれる関数
     public void ballOut()
     {
         audioSource.PlayOneShot(dropOutSound);
-        //rigidbody.AddTorque(new Vector3(0,100,0), ForceMode.Impulse);←回転させたいけどできん泣
+
+        rigidbody.AddTorque(Vector3.up * 10000, ForceMode.Impulse);//←回転させたいけどできん泣
+        Debug.Log("読んだ？");
+
         //transform.Rotate(new Vector3(0, 100, 0));
+
     }
 
     /// <summary>

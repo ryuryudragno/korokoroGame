@@ -653,7 +653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clearText: {fileID: 975934670}
   InBallNumber: 0
-  AllBallNumber: 2
+  AllBallNumber: 1
   holeSoundEffect: {fileID: 8300000, guid: 040ac4aa44583476b845f95b4c6d1bf4, type: 3}
   clearSound: {fileID: 8300000, guid: ac5f57fe7fb654482b7881ccc84acc76, type: 3}
   gameOverSound: {fileID: 8300000, guid: ac26222bbb9b04c22a97f46b6ad70790, type: 3}
@@ -1904,7 +1904,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1290778230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2374,7 +2374,7 @@ MonoBehaviour:
   retryBtn: {fileID: 1477778397}
   selectSound: {fileID: 8300000, guid: 120a8354b0f4b472d9d527f8ac255b5b, type: 3}
   gameOverSound: {fileID: 8300000, guid: ac26222bbb9b04c22a97f46b6ad70790, type: 3}
-  nextlebel: Stagetest
+  nextlebel: Stage2
 --- !u!4 &1492442127
 Transform:
   m_ObjectHideFlags: 0
@@ -2592,7 +2592,7 @@ MeshCollider:
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
-  m_Mesh: {fileID: 2052545427}
+  m_Mesh: {fileID: 2132366255}
 --- !u!114 &1585160192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6495,7 +6495,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 2
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -6510,7 +6510,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585160189}
-  m_Mesh: {fileID: 2052545427}
+  m_Mesh: {fileID: 2132366255}
 --- !u!4 &1585160195
 Transform:
   m_ObjectHideFlags: 0
@@ -6687,13 +6687,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &2052545427
+--- !u!43 &2132366255
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20014
+  m_Name: pb_Mesh54446
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
