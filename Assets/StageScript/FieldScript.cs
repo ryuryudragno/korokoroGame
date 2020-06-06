@@ -61,7 +61,7 @@ public class FieldScript : MonoBehaviour
         audioSource.PlayOneShot(dropOutSound);
 
         rigidbody.AddTorque(Vector3.up * 10000, ForceMode.Impulse);//←回転させたいけどできん泣
-        Debug.Log("読んだ？");
+        //Debug.Log("読んだ？");
 
         //transform.Rotate(new Vector3(0, 100, 0));
 
@@ -100,7 +100,7 @@ public class FieldScript : MonoBehaviour
                         throw new System.InvalidOperationException();
                 }
 
-                GUI.Label(new Rect(x, y, w, h), text, this.labelStyle);
+                //GUI.Label(new Rect(x, y, w, h), text, this.labelStyle);
             }
         }
     }

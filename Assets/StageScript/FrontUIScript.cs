@@ -14,6 +14,7 @@ public class FrontUIScript : MonoBehaviour
     public AudioClip gameOverSound;
     AudioSource audioSource;
     public string nextlebel;
+    string sceneName;
 
     /*
     public Button nextBtn;
@@ -28,6 +29,7 @@ public class FrontUIScript : MonoBehaviour
         titleBtn.SetActive(false);
         retryBtn.SetActive(false);
         audioSource = GetComponent<AudioSource>();
+        sceneName = SceneManager.GetActiveScene().name;
         /*
         nextBtn.interactable = false;
         selectBtn.interactable = false;
@@ -77,13 +79,13 @@ public class FrontUIScript : MonoBehaviour
     /*リトライ*/
     public void Retry()
     {
-        StartCoroutine("Stage1");
+        StartCoroutine("Restart");
         audioSource.PlayOneShot(selectSound);
     }
-    IEnumerator Stage1()
+    IEnumerator Restart()
     {
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("Stage1");
+        SceneManager.LoadScene(sceneName);
     }
     /*次のステージへ*/
     public void MoveToNextStage()
