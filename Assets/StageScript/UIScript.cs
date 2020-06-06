@@ -20,7 +20,7 @@ public class UIScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         timer -= Time.deltaTime;
         timerText.text = timer.ToString("f0");

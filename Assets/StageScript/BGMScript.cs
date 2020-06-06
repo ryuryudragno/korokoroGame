@@ -14,6 +14,7 @@ public class BGMScript : MonoBehaviour
         //画面遷移してもオブジェクトが壊れないようにする
         //DontDestroyOnLoad(this);
         audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
     }
     public void StopBGM()
     {

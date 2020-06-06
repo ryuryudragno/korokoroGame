@@ -36,6 +36,10 @@ public class FieldScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Mathf.Approximately(Time.timeScale, 0f))
+        {
+            return;
+        }
         //文字描画はOnGUIでしかできないらしいので保持
         this.acceleration = Input.acceleration;
         //transform.Rotate(new Vector3((float)(this.acceleration.y + 0.015), 0, (float)(-this.acceleration.x - 0.005)));//回転する

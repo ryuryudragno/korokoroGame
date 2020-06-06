@@ -10,6 +10,7 @@ public class FrontUIScript : MonoBehaviour
     public GameObject selectBtn;
     public GameObject titleBtn;
     public GameObject retryBtn;
+    public GameObject panel;
     public AudioClip selectSound;
     public AudioClip gameOverSound;
     AudioSource audioSource;
@@ -24,6 +25,7 @@ public class FrontUIScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        panel.SetActive(false);
         nextBtn.SetActive(false);
         selectBtn.SetActive(false);
         titleBtn.SetActive(false);
@@ -44,6 +46,7 @@ public class FrontUIScript : MonoBehaviour
 
     public void ClearAppearButton()
     {
+        panel.SetActive(true);
         nextBtn.SetActive(true);
         selectBtn.SetActive(true);
         titleBtn.SetActive(true);
@@ -56,6 +59,7 @@ public class FrontUIScript : MonoBehaviour
     //ボタン表示
     public void  GameOverAppearButton()
     {
+        panel.SetActive(true);
         retryBtn.SetActive(true);
         selectBtn.SetActive(true);
         titleBtn.SetActive(true);
