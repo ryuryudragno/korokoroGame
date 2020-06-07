@@ -33,7 +33,7 @@ public class SphereScript : MonoBehaviour
 
     void DropOut()
     {
-        transform.position = StartPosition;
+        transform.position = StartPosition + new Vector3(0,5,0);
         this.rigidbody.velocity = new Vector3(0, 0, 0);
         GameObject.FindObjectOfType<FieldScript>().ballOut();
         GameObject.FindObjectOfType<UIScript>().timeMinus();
