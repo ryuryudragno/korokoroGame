@@ -6063,7 +6063,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30DC\u30FC\u30EB4\u500B"
+  m_Text: 4 balls
 --- !u!222 &268711130
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28224,7 +28224,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Stage4
+  m_Text: 'Stage6
 
 '
 --- !u!222 &2115712819

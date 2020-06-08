@@ -71,10 +71,22 @@ public class StageSelectScript : MonoBehaviour
     }
     public void MoveToStage5()
     {
-        SceneManager.LoadScene("Title");
+        StartCoroutine("Stage5");
+        audioSource.PlayOneShot(selectSound);
+    }
+    IEnumerator Stage5()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("Stage5");
     }
     public void MoveToStage6()
     {
-        SceneManager.LoadScene("Title");
+        StartCoroutine("Stage6");
+        audioSource.PlayOneShot(selectSound);
+    }
+    IEnumerator Stage6()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("Stage6");
     }
 }

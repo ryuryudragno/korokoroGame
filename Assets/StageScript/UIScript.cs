@@ -41,6 +41,11 @@ public class UIScript : MonoBehaviour
     {
         timer += 10;
     }
+    public void timePlusJamp()
+    {
+        timer += 2;
+    }
+
     public void timeMinus()
     {
         timer -= 5;

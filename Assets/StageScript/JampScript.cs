@@ -28,6 +28,7 @@ public class JampScript : MonoBehaviour
             audioSource.PlayOneShot(jampSoundEffect);
 
             Debug.Log("Jamp");
+            GameObject.FindObjectOfType<UIScript>().timePlusJamp();
         }
     }
 }
