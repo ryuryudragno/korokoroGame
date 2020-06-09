@@ -54,6 +54,7 @@ public class holeScript : MonoBehaviour
         GameObject.FindObjectOfType<UIScript>().gameFin();
         GameObject.FindObjectOfType<FrontUIScript>().ClearAppearButton();
         GameObject.FindObjectOfType<BGMScript>().StopBGM();
+        GameObject.FindObjectOfType<StageManager>().stageClearUpdate();
     }
 
     public void GameOverSound()

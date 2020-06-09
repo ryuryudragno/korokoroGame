@@ -19,6 +19,7 @@ public class StageSelectScript : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
