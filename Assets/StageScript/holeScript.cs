@@ -39,7 +39,7 @@ public class holeScript : MonoBehaviour
             else
             {
                 //audioSource.PlayOneShot(holeSoundEffect);
-                GameObject.FindObjectOfType<UIScript>().timePlus();
+                GameObject.FindObjectOfType<TimeScript>().timePlus();
             }
             //Debug.Log("clear");
         }
@@ -47,14 +47,16 @@ public class holeScript : MonoBehaviour
 
     void gameClear()
     {
+        GameObject.FindObjectOfType<UnlockScript>().Unlock();
         Debug.Log("clear");
         clearText.text = "Clear!!";
         audioSource.PlayOneShot(clearSound);
         GameObject.FindObjectOfType<FieldScript>().enabled = false;
-        GameObject.FindObjectOfType<UIScript>().gameFin();
+        GameObject.FindObjectOfType<TimeScript>().gameFin();
         GameObject.FindObjectOfType<FrontUIScript>().ClearAppearButton();
         GameObject.FindObjectOfType<BGMScript>().StopBGM();
         GameObject.FindObjectOfType<StageManager>().stageClearUpdate();
+        
     }
 
     public void GameOverSound()

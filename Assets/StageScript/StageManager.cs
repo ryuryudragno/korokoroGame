@@ -115,10 +115,11 @@ public class StageManager : MonoBehaviour
                 //break文
                 break;
         }
-        //PlayerPrefsをセーブする
+
         //初期化したいときこの行↓をコメントはずす
         //PlayerPrefs.SetInt("SCORE", 0);
 
+        //PlayerPrefsをセーブする
         PlayerPrefs.Save();
     }
 }

@@ -12,7 +12,7 @@ public class CutInScript : MonoBehaviour
         FindObjectOfType<holeScript>().enabled = false;
         FindObjectOfType<BGMScript>().enabled = false;
         FindObjectOfType<SphereScript>().enabled = false;
-        FindObjectOfType<UIScript>().enabled = false;
+        FindObjectOfType<TimeScript>().enabled = false;
         //FindObjectOfType<FieldScript>().enabled = false;
         //FindObjectOfType<FieldScript>().enabled = false;
         //FindObjectOfType<FieldScript>().enabled = false;
@@ -29,6 +29,6 @@ public class CutInScript : MonoBehaviour
         FindObjectOfType<holeScript>().enabled = true;
         FindObjectOfType<BGMScript>().enabled = true;
         FindObjectOfType<SphereScript>().enabled = true;
-        FindObjectOfType<UIScript>().enabled = true;
+        FindObjectOfType<TimeScript>().enabled = true;
     }
 }

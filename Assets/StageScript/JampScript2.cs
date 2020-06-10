@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JampScript : MonoBehaviour
+public class JampScript2 : MonoBehaviour
 {
     public AudioClip jampSoundEffect;
     AudioSource audioSource;
@@ -28,7 +28,7 @@ public class JampScript : MonoBehaviour
             audioSource.PlayOneShot(jampSoundEffect);
 
             Debug.Log("Jamp");
-            //GameObject.FindObjectOfType<UIScript>().timePlusJamp();
+            GameObject.FindObjectOfType<TimeScript>().timePlusJamp();
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIScript : MonoBehaviour
+public class TimeScript : MonoBehaviour
 {
     public Text timerText;
     public Text clearText;
@@ -44,6 +44,7 @@ public class UIScript : MonoBehaviour
     public void timePlusJamp()
     {
         timer += 2;
+        Debug.Log("呼ばれたお");
     }
 
     public void timeMinus()

@@ -36,7 +36,7 @@ public class SphereScript : MonoBehaviour
         transform.position = StartPosition + new Vector3(0,5,0);
         this.rigidbody.velocity = new Vector3(0, 0, 0);
         GameObject.FindObjectOfType<FieldScript>().ballOut();
-        GameObject.FindObjectOfType<UIScript>().timeMinus();
+        GameObject.FindObjectOfType<TimeScript>().timeMinus();
     }
     public void Destroy()
     {

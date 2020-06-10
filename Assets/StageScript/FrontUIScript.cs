@@ -63,6 +63,7 @@ public class FrontUIScript : MonoBehaviour
         retryBtn.SetActive(true);
         selectBtn.SetActive(true);
         titleBtn.SetActive(true);
+
     }
     //タイトル画面へ
     public void BackToTitle()
