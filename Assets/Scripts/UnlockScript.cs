@@ -68,6 +68,13 @@ public class UnlockScript : MonoBehaviour
                 }
                 break;
 
+            case "Stage6":
+                if (stage_num < 7)
+                {
+                    unlockText.enabled = true;
+                    unlockText.text = "Complete!";
+                }
+                break;
             //デフォルト処理
             default:
          
