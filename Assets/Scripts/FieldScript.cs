@@ -45,8 +45,8 @@ public class FieldScript : MonoBehaviour
         //transform.Rotate(new Vector3((float)(this.acceleration.y + 0.015), 0, (float)(-this.acceleration.x - 0.005)));//回転する
         //Debug.Log(new Vector2(xRotate,zRotate));
         transform.eulerAngles = new Vector3(xRotate, yRotate, zRotate);
-        xRotate = Mathf.Clamp(xRotate + (float)(this.acceleration.y + 0.015), minAngle, maxAngle);
-        zRotate = Mathf.Clamp(zRotate + (float)(-this.acceleration.x - 0.005), minAngle, maxAngle);
+        xRotate = Mathf.Clamp(xRotate + (float)((this.acceleration.y + 0.015) * 2.5), minAngle, maxAngle);
+        zRotate = Mathf.Clamp(zRotate + (float)((-this.acceleration.x - 0.005)* 2.5), minAngle, maxAngle);
 
 
         /*

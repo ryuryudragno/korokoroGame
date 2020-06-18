@@ -117,7 +117,7 @@ public class StageManager : MonoBehaviour
         }
 
         //初期化したいときこの行↓をコメントはずす
-        //PlayerPrefs.SetInt("SCORE", 0);
+        PlayerPrefs.SetInt("SCORE", 0);
 
         //PlayerPrefsをセーブする
         PlayerPrefs.Save();

@@ -12,6 +12,7 @@ public class holeScript : MonoBehaviour
     public AudioClip clearSound;
     public AudioClip gameOverSound;
     AudioSource audioSource;
+    public Button pauseButton;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +57,7 @@ public class holeScript : MonoBehaviour
         GameObject.FindObjectOfType<FrontUIScript>().ClearAppearButton();
         GameObject.FindObjectOfType<BGMScript>().StopBGM();
         GameObject.FindObjectOfType<StageManager>().stageClearUpdate();
+        pauseButton.interactable = false;
         
     }
 

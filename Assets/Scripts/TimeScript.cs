@@ -9,6 +9,7 @@ public class TimeScript : MonoBehaviour
     public Text clearText;
     float timer = 30;
     public bool timeStop = false;
+    public Button pauseButton;
     //GameObject gameObject;
 
     // Start is called before the first frame update
@@ -65,7 +66,7 @@ public class TimeScript : MonoBehaviour
         FindObjectOfType<holeScript>().enabled = false;
         FindObjectOfType<FrontUIScript>().GameOverAppearButton();
         FindObjectOfType<FrontUIScript>().GameOverSound();
-        
+        pauseButton.interactable = false;
 
         GameObject[] Spheres = GameObject.FindGameObjectsWithTag("Player");
         for (int i = 0; i < Spheres.Length; i++)
