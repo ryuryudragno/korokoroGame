@@ -35,7 +35,7 @@ public class UnlockScript : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("そのまま");
+                    //Debug.Log("そのまま");
                 }
                 //break文
                 break;

@@ -49,7 +49,7 @@ public class holeScript : MonoBehaviour
     void gameClear()
     {
         GameObject.FindObjectOfType<UnlockScript>().Unlock();
-        Debug.Log("clear");
+        //Debug.Log("clear");
         clearText.text = "Clear!!";
         audioSource.PlayOneShot(clearSound);
         GameObject.FindObjectOfType<FieldScript>().enabled = false;
@@ -58,7 +58,7 @@ public class holeScript : MonoBehaviour
         GameObject.FindObjectOfType<BGMScript>().StopBGM();
         GameObject.FindObjectOfType<StageManager>().stageClearUpdate();
         pauseButton.interactable = false;
-        
+        GameObject.FindObjectOfType<AdvertiseScript>().ShowRewardedAd();
     }
 
     public void GameOverSound()

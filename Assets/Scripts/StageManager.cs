@@ -71,11 +71,11 @@ public class StageManager : MonoBehaviour
                 if (stage_num < 2)
                 {
                     PlayerPrefs.SetInt("SCORE", 2);
-                    Debug.Log("反応したよ");
+                    //Debug.Log("反応したよ");
                 }
                 else
                 {
-                    Debug.Log("そのまま");
+                    //Debug.Log("そのまま");
                 }
                 //break文
                 break;
