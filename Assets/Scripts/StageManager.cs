@@ -8,12 +8,12 @@ public class StageManager : MonoBehaviour
 {
 
     public int stage_num; // スコア変数
-    public GameObject two;
+    public GameObject two;//有効化する(明るめの色)パネル
     public GameObject three;
     public GameObject four;
     public GameObject five;
     public GameObject six;
-    public GameObject twoP;
+    public GameObject twoP;//無効化する(暗めの色)パネル
     public GameObject threeP;
     public GameObject fourP;
     public GameObject fiveP;
@@ -33,8 +33,8 @@ public class StageManager : MonoBehaviour
         //stage_numが２以上のとき、ステージ２を解放する。以下同様
         if (stage_num >= 2)
         {
-            two.SetActive(true);
-            twoP.SetActive(false);
+            two.SetActive(true);//有効化パネルをon
+            twoP.SetActive(false);//無効化パネルをof
         }
 
         if (stage_num >= 3)
@@ -62,7 +62,7 @@ public class StageManager : MonoBehaviour
     }
     public void stageClearUpdate()
     {
-        stage_num = PlayerPrefs.GetInt("SCORE", 0);
+        stage_num = PlayerPrefs.GetInt("SCORE", 0);//デフォルト値は0,SCOREに何か数字があればそれを拾ってくる
 
         switch (SceneManager.GetActiveScene().name)
         {
@@ -77,7 +77,6 @@ public class StageManager : MonoBehaviour
                 {
                     //Debug.Log("そのまま");
                 }
-                //break文
                 break;
 
             case "Stage2":

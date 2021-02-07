@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class StageSelectScript : MonoBehaviour
 {
-    public Button stage1button;
-    public Button stage2button;
-    public Button stage3button;
-    public Button stage4button;
-    public Button stage5button;
-    public Button stage6button;
+    //public Button stage1button;
+    //public Button stage2button;
+    //public Button stage3button;
+    //public Button stage4button;
+    //public Button stage5button;
+    //public Button stage6button;
     public AudioClip selectSound;
     AudioSource audioSource;
 

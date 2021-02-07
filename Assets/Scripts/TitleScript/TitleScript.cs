@@ -43,7 +43,7 @@ public class TitleScript : MonoBehaviour
                     //SceneManager.LoadScene("Stage1");
                     audioSource.PlayOneShot(StartSoundEffect);
                     StartCoroutine("GoToStageSelect");
-                    Debug.Log("あああ");
+                    //Debug.Log("あああ");
                     //audioSource.Play();
 
                     //タッチした位置からRayを飛ばす
