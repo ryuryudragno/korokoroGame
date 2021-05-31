@@ -5,9 +5,11 @@ using UnityEngine.Advertisements;
 
 public class AdvertiseScript : MonoBehaviour
 {
+    const string advertiseId = "3667968";
+
     public void Start()
     {
-        Advertisement.Initialize("3667968", false);
+        Advertisement.Initialize(advertiseId, false);
     }
     //広告呼び出し
     public void ShowRewardedAd()
@@ -17,7 +19,7 @@ public class AdvertiseScript : MonoBehaviour
         Debug.Log("isInitialized:" + Advertisement.isInitialized);
         if (Advertisement.IsReady())
         {
-            StartCoroutine("Advertise");
+            StartCoroutine(Advertise());//コルーチンの引数は関数使える
             Debug.Log("い");
         }
     }
